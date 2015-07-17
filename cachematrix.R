@@ -2,7 +2,7 @@
 ## There are two steps in using these functions. 
 ## Step 1 - Run makeCacheMatrix with the input matrix. This will output a special object.
 ## Step 2 - Run cacheSolve with the result from makeCacheMatrix. The result from cacheSolve is the 
-## inverse matrix from the original matrix.
+##          inverse matrix from the original matrix.
 
 ## makeCacheMatrix uses the original matrix to create a special object to help manage the cache of the matrix inverse.
 ## Input: Original matrix (the matrix that you would like to calculate its inverse).
@@ -17,7 +17,7 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   get <- function() x #returns the original matrix once it's needed to calculate the inverse
   getMatrixInverse <- function() matrixInverse #returns the matrixInverse. This is the cache.
-  setMatrixInverse <- function(matrixInverse) matrixInverse <<- matrixInverse #saves a calculate value to the cache
+  setMatrixInverse <- function(matrixInverse) matrixInverse <<- matrixInverse #saves the calculated value to the cache
   
   list(set = set, get = get, getMatrixInverse = getMatrixInverse, setMatrixInverse = setMatrixInverse)
 }
@@ -34,7 +34,7 @@ cacheSolve <- function(x, ...) {
   
   if (!is.null(matrixInverse)){
     #the inverse is in the cache already, use it
-    message("Using the cache")
+    message("Using the inverse value from the cache")
     return(matrixInverse)
   }
   
