@@ -19,7 +19,7 @@ makeCacheMatrix <- function(x = matrix()) {
   getMatrixInverse <- function() matrixInverse #returns the matrixInverse. This is the cache.
   setMatrixInverse <- function(matrixInverse) matrixInverse <<- matrixInverse #saves a calculate value to the cache
   
-  list(get=get, getMatrixInverse=getMatrixInverse, setMatrixInverse = setMatrixInverse)
+  list(set = set, get = get, getMatrixInverse = getMatrixInverse, setMatrixInverse = setMatrixInverse)
 }
 
 
